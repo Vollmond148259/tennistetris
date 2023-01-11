@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: azure;
+  width: 320px;
+  height: 640px;
+  border: 10px solid gray;
+}
+.grid div {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+.wall {
+  background-color: azure;
+  font-size: 12px;
+}
+.stone {
+  background-color: blue;
+  font-size: 12px;
+}
+.board {
+  background-color: cornflowerblue;
+}
+.ball {
+  background-color: aqua;
+  border-radius: 50%;
+}
