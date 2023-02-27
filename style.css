@@ -1,38 +1,113 @@
+@font-face {
+  font-family: 'ds-digitalbold_italic';
+  src: url('fonts/ds-digit-webfont.woff2') format('woff2'),
+    url('fonts/ds-digit-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
+  font-family: 'ds-digitalbold_italic';
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
+}
+.field {
+  margin-top: 30px;
+  background-color: #899774;
+  width: 500px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  border: 12px solid #110d14;
+  outline: 12px solid #2746a0;
+  outline-offset: 10px;
+}
+.hidden {
+  color: #646d55;
+}
+.active {
+  color: #000002;
+}
+.gameInfo {
+  padding-left: 1px;
+  width: 174px;
+  height: 642px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.boyImage {
+  display: flex;
+  justify-content: center;
+}
+.miniField {
+  display: flex;
+  flex-wrap: wrap;
+  width: 130px;
+  height: 130px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  border: 2px solid #000002;
+}
+.scoreInfo {
+  font-size: 24px;
+  text-align: center;
+  line-height: 30px;
+  text-transform: uppercase;
 }
 * {
   margin: 0;
   padding: 0;
 }
 .grid {
+  background-color: #838d73;
   display: flex;
   flex-wrap: wrap;
-  background-color: azure;
-  width: 320px;
+  width: 330px;
   height: 640px;
-  border: 10px solid gray;
+  border: 2px solid #000002;
+}
+.miniField div {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #838d73;
 }
 .grid div {
   width: 30px;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid #838d73;
 }
 .wall {
-  background-color: azure;
-  font-size: 12px;
+  background-color: #838d73;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: 2px solid #899774;
+  outline-offset: -5px;
 }
 .stone {
-  background-color: blue;
-  font-size: 12px;
+  background-color: #000002;
+  font-size: 16px;
+  border: 1px solid #000002;
+  border-radius: 4px;
+  outline: 2px solid #899774;
+  outline-offset: -5px;
 }
 .board {
-  background-color: cornflowerblue;
+  background-color: #000002;
+  border: 1px solid #000002;
+  border-radius: 4px;
+  outline: 2px solid #899774;
+  outline-offset: -5px;
 }
 .ball {
-  background-color: aqua;
-  border-radius: 50%;
+  background-color: #000002;
+  border-radius: 4px;
+  outline: 2px solid #899774;
+  outline-offset: -5px;
+  border: 1px solid #000002;
 }
