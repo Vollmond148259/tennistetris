@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.querySelector('.grid');
-  const miniField = document.querySelector('.miniField');
-  const userScoreHtml = document.querySelector('#scoreBitch');
-  const pause = document.querySelector('#pause');
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.querySelector(".grid");
+  const miniField = document.querySelector(".miniField");
+  const userScoreHtml = document.querySelector("#scoreBitch");
+  const pause = document.querySelector("#pause");
   const MINILAYOUT = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   const LAYOUT = [
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderBattleField(array, element, storeArr) {
     for (let i = 0; i < array.length; i++) {
-      const square = document.createElement('div');
+      const square = document.createElement("div");
       element.appendChild(square);
-      //square.innerText = i;
+      // square.innerText = i;
 
       storeArr.push(square);
       if (array[i] === 1) {
-        storeArr[i].classList.add('wall');
+        storeArr[i].classList.add("wall");
       }
     }
   }
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     userScoreHtml.innerText = score;
   }
   function setPause(className) {
-    pause.classList.remove('active');
+    pause.classList.remove("active");
     pause.classList.add(className);
   }
 
@@ -59,29 +59,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderSquareStones(stonesArray) {
     for (let index of stonesArray) {
-      squares[index].classList.add('stone');
-      squares[index + 1].classList.add('stone');
-      squares[index + returnate].classList.add('stone');
-      squares[index + rightAngle].classList.add('stone');
+      squares[index].classList.add("stone");
+      squares[index + 1].classList.add("stone");
+      squares[index + returnate].classList.add("stone");
+      squares[index + rightAngle].classList.add("stone");
     }
   }
   function renderTestStones(stonesArray) {
     for (let index of stonesArray) {
-      squares[index].classList.add('stone');
+      squares[index].classList.add("stone");
     }
   }
   function renderWallOfStones(stonesArray) {
     for (let index of stonesArray) {
-      squares[index].classList.add('stone');
-      squares[index + 1].classList.add('stone');
-      squares[index + 2].classList.add('stone');
-      squares[index + 3].classList.add('stone');
-      squares[index + 4].classList.add('stone');
-      squares[index + 5].classList.add('stone');
-      squares[index + 6].classList.add('stone');
-      squares[index + 7].classList.add('stone');
-      squares[index + 8].classList.add('stone');
-      squares[index + 9].classList.add('stone');
+      squares[index].classList.add("stone");
+      squares[index + 1].classList.add("stone");
+      squares[index + 2].classList.add("stone");
+      squares[index + 3].classList.add("stone");
+      squares[index + 4].classList.add("stone");
+      squares[index + 5].classList.add("stone");
+      squares[index + 6].classList.add("stone");
+      squares[index + 7].classList.add("stone");
+      squares[index + 8].classList.add("stone");
+      squares[index + 9].classList.add("stone");
     }
   }
 
@@ -106,27 +106,27 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(rightBorder);
   console.log(bottomBorder);
 
-  squares[ballDefaultIndex].classList.add('ball');
+  squares[ballDefaultIndex].classList.add("ball");
 
   function renderBoard() {
-    squares[BOARD_CURRENT_INDEX].classList.add('board');
-    squares[BOARD_CURRENT_INDEX - 1].classList.add('board');
-    squares[BOARD_CURRENT_INDEX - 2].classList.add('board');
-    squares[BOARD_CURRENT_INDEX - 3].classList.add('board');
+    squares[BOARD_CURRENT_INDEX].classList.add("board");
+    squares[BOARD_CURRENT_INDEX - 1].classList.add("board");
+    squares[BOARD_CURRENT_INDEX - 2].classList.add("board");
+    squares[BOARD_CURRENT_INDEX - 3].classList.add("board");
   }
 
   function clearBoard() {
-    squares[BOARD_CURRENT_INDEX].classList.remove('board');
-    squares[BOARD_CURRENT_INDEX - 1].classList.remove('board');
-    squares[BOARD_CURRENT_INDEX - 2].classList.remove('board');
-    squares[BOARD_CURRENT_INDEX - 3].classList.remove('board');
+    squares[BOARD_CURRENT_INDEX].classList.remove("board");
+    squares[BOARD_CURRENT_INDEX - 1].classList.remove("board");
+    squares[BOARD_CURRENT_INDEX - 2].classList.remove("board");
+    squares[BOARD_CURRENT_INDEX - 3].classList.remove("board");
   }
 
   function clearBall() {
-    squares[ballDefaultIndex].classList.remove('ball');
+    squares[ballDefaultIndex].classList.remove("ball");
   }
   function renderBall() {
-    squares[ballDefaultIndex].classList.add('ball');
+    squares[ballDefaultIndex].classList.add("ball");
   }
 
   function changeBallAngle(angle) {
@@ -169,46 +169,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // console.log('leftBottom-' + leftBottom);
 
     if (right && bottom) {
-      return 'rightAndBottom';
+      return "rightAndBottom";
     }
     if (left && bottom) {
-      return 'leftAndBottom';
+      return "leftAndBottom";
     }
     if (right && top) {
-      return 'rightAndTop';
+      return "rightAndTop";
     }
     if (left && top) {
-      return 'leftAndTop';
+      return "leftAndTop";
     }
     if (right) {
-      return 'right';
+      return "right";
     }
     if (left) {
-      return 'left';
+      return "left";
     }
     if (top) {
-      return 'top';
+      return "top";
     }
     if (bottom) {
-      return 'bottom';
+      return "bottom";
     }
     if (rightTop) {
-      return 'rightTop';
+      return "rightTop";
     }
     if (leftTop) {
-      return 'leftTop';
+      return "leftTop";
     }
 
     if (leftBottom) {
-      return 'leftBottom';
+      return "leftBottom";
     }
     if (rightBottom) {
-      return 'rightBottom';
+      return "rightBottom";
     }
   }
   function checkCollideBallAndStone(ballIndex) {
     if (ballIndex > 9 && ballIndex < 129) {
-      console.log('start collide ball and stone' + ballIndex);
+      console.log("start collide ball and stone" + ballIndex);
       let changeAngle = false;
       let changeDirection = false;
       let rightSide = ballIndex + 1;
@@ -220,15 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
       let leftBottomSide = ballIndex + leftAngle;
       let rightBottomSide = ballIndex + rightAngle;
 
-      let rightStone = squares[rightSide].classList.contains('stone');
-      let leftStone = squares[leftSide].classList.contains('stone');
-      let topStone = squares[topSide].classList.contains('stone');
-      let bottomStone = squares[bottomSide].classList.contains('stone');
-      let rightTopStone = squares[rightTopSide].classList.contains('stone');
-      let leftTopStone = squares[leftTopSide].classList.contains('stone');
+      let rightStone = squares[rightSide].classList.contains("stone");
+      let leftStone = squares[leftSide].classList.contains("stone");
+      let topStone = squares[topSide].classList.contains("stone");
+      let bottomStone = squares[bottomSide].classList.contains("stone");
+      let rightTopStone = squares[rightTopSide].classList.contains("stone");
+      let leftTopStone = squares[leftTopSide].classList.contains("stone");
       let rightBottomStone =
-        squares[rightBottomSide].classList.contains('stone');
-      let leftBottomStone = squares[leftBottomSide].classList.contains('stone');
+        squares[rightBottomSide].classList.contains("stone");
+      let leftBottomStone = squares[leftBottomSide].classList.contains("stone");
 
       let collidePlace = null;
 
@@ -283,85 +283,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
       //console.log('collidePlace:-' + collidePlace);
       switch (collidePlace) {
-        case 'right': {
-          squares[rightSide].classList.remove('stone');
-          squares[rightSide].classList.add('wall');
+        case "right": {
+          squares[rightSide].classList.remove("stone");
+          squares[rightSide].classList.add("wall");
           userCount += 1;
           updateScore(userCount);
           changeAngle = true;
           break;
         }
-        case 'rightAndTop': {
-          squares[rightSide].classList.remove('stone');
-          squares[rightSide].classList.add('wall');
-          squares[topSide].classList.remove('stone');
-          squares[topSide].classList.add('wall');
+        case "rightAndTop": {
+          squares[rightSide].classList.remove("stone");
+          squares[rightSide].classList.add("wall");
+          squares[topSide].classList.remove("stone");
+          squares[topSide].classList.add("wall");
           userCount += 2;
           updateScore(userCount);
           changeDirection = true;
           break;
         }
-        case 'leftAndTop': {
-          squares[leftSide].classList.remove('stone');
-          squares[leftSide].classList.add('wall');
-          squares[topSide].classList.remove('stone');
-          squares[topSide].classList.add('wall');
+        case "leftAndTop": {
+          squares[leftSide].classList.remove("stone");
+          squares[leftSide].classList.add("wall");
+          squares[topSide].classList.remove("stone");
+          squares[topSide].classList.add("wall");
           userCount += 2;
           updateScore(userCount);
           changeDirection = true;
           break;
         }
-        case 'rightAndBottom': {
-          squares[rightSide].classList.remove('stone');
-          squares[rightSide].classList.add('wall');
-          squares[bottomSide].classList.remove('stone');
-          squares[bottomSide].classList.add('wall');
+        case "rightAndBottom": {
+          squares[rightSide].classList.remove("stone");
+          squares[rightSide].classList.add("wall");
+          squares[bottomSide].classList.remove("stone");
+          squares[bottomSide].classList.add("wall");
           userCount += 2;
           updateScore(userCount);
           changeDirection = true;
           break;
         }
-        case 'leftAndBottom': {
-          squares[leftSide].classList.remove('stone');
-          squares[leftSide].classList.add('wall');
-          squares[bottomSide].classList.remove('stone');
-          squares[bottomSide].classList.add('wall');
+        case "leftAndBottom": {
+          squares[leftSide].classList.remove("stone");
+          squares[leftSide].classList.add("wall");
+          squares[bottomSide].classList.remove("stone");
+          squares[bottomSide].classList.add("wall");
           userCount += 2;
           updateScore(userCount);
           changeDirection = true;
           break;
         }
 
-        case 'left': {
-          squares[leftSide].classList.remove('stone');
-          squares[leftSide].classList.add('wall');
+        case "left": {
+          squares[leftSide].classList.remove("stone");
+          squares[leftSide].classList.add("wall");
           userCount += 1;
           updateScore(userCount);
           changeAngle = true;
           break;
         }
-        case 'top': {
-          squares[topSide].classList.remove('stone');
-          squares[topSide].classList.add('wall');
-          userCount += 1;
-          updateScore(userCount);
-          changeDirection = true;
-          changeAngle = true;
-          break;
-        }
-        case 'bottom': {
-          squares[bottomSide].classList.remove('stone');
-          squares[bottomSide].classList.add('wall');
+        case "top": {
+          squares[topSide].classList.remove("stone");
+          squares[topSide].classList.add("wall");
           userCount += 1;
           updateScore(userCount);
           changeDirection = true;
           changeAngle = true;
           break;
         }
-        case 'rightTop': {
+        case "bottom": {
+          squares[bottomSide].classList.remove("stone");
+          squares[bottomSide].classList.add("wall");
+          userCount += 1;
+          updateScore(userCount);
+          changeDirection = true;
+          changeAngle = true;
+          break;
+        }
+        case "rightTop": {
           if (ballDirection === -1 && ballAngle === leftAngle) {
-            squares[rightTopSide].classList.remove('stone');
-            squares[rightTopSide].classList.add('wall');
+            squares[rightTopSide].classList.remove("stone");
+            squares[rightTopSide].classList.add("wall");
             userCount += 1;
             updateScore(userCount);
             changeDirection = true;
@@ -369,10 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           break;
         }
-        case 'leftTop': {
+        case "leftTop": {
           if (ballDirection === -1 && ballAngle === rightAngle) {
-            squares[leftTopSide].classList.remove('stone');
-            squares[leftTopSide].classList.add('wall');
+            squares[leftTopSide].classList.remove("stone");
+            squares[leftTopSide].classList.add("wall");
             userCount += 1;
             updateScore(userCount);
             changeDirection = true;
@@ -380,10 +380,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           break;
         }
-        case 'rightBottom': {
+        case "rightBottom": {
           if (ballDirection === 1 && ballAngle === rightAngle) {
-            squares[rightBottomSide].classList.remove('stone');
-            squares[rightBottomSide].classList.add('wall');
+            squares[rightBottomSide].classList.remove("stone");
+            squares[rightBottomSide].classList.add("wall");
             userCount += 1;
             updateScore(userCount);
             changeDirection = true;
@@ -391,10 +391,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           break;
         }
-        case 'leftBottom': {
+        case "leftBottom": {
           if (ballDirection === 1 && ballAngle === leftAngle) {
-            squares[leftBottomSide].classList.remove('stone');
-            squares[leftBottomSide].classList.add('wall');
+            squares[leftBottomSide].classList.remove("stone");
+            squares[leftBottomSide].classList.add("wall");
             userCount += 1;
             updateScore(userCount);
             changeDirection = true;
@@ -420,9 +420,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return 0;
     }
     if (ballIndex < 189) {
-      downBoard = squares[ballIndex + returnate].classList.contains('board');
-      leftBoard = squares[ballIndex + leftAngle].classList.contains('board');
-      rightBoard = squares[ballIndex + rightAngle].classList.contains('board');
+      downBoard = squares[ballIndex + returnate].classList.contains("board");
+      leftBoard = squares[ballIndex + leftAngle].classList.contains("board");
+      rightBoard = squares[ballIndex + rightAngle].classList.contains("board");
     }
 
     if (rightBoard && !downBoard && !leftBoard && ballAngle === rightAngle) {
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return 0;
   }
   function checkCollideBoardAndBall(ballIndex) {
-    let temp = squares[ballIndex + returnate].classList.contains('board');
+    let temp = squares[ballIndex + returnate].classList.contains("board");
     return temp;
   }
   function slideBallAndBoard(angle) {
@@ -460,11 +460,11 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(ballDefaultIndex);
       //clearBall for normal view
       if (ballDefaultIndex === 9) {
-        console.log('leftAnCatch');
+        console.log("leftAnCatch");
         ballDirection = 1;
       }
       if (ballDefaultIndex === 0) {
-        console.log('rightAnCatch');
+        console.log("rightAnCatch");
         ballDirection = 1;
       }
       if (topBorder.includes(ballDefaultIndex)) {
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ballDirection = -1;
         } else {
           if (checkCollideBoardAndBall(ballDefaultIndex) === true) {
-            console.log('board');
+            console.log("board");
             if (
               currentKey === 32 &&
               BOARD_CURRENT_INDEX != 199 &&
@@ -495,11 +495,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       if (leftBorder.includes(ballDefaultIndex) == true) {
-        console.log('leftBorderCatch');
+        console.log("leftBorderCatch");
         ballAngle = changeBallAngle(ballAngle);
       }
       if (rightBorder.includes(ballDefaultIndex) == true) {
-        console.log('rightBorderCatch');
+        console.log("ball" + ballDefaultIndex);
+        console.log("rightBorderCatch");
         ballAngle = changeBallAngle(ballAngle);
       }
       if (
@@ -540,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (e.keyCode === 27) {
       clearInterval(timerId);
-      setPause('active');
+      setPause("active");
     }
     currentKey = e.keyCode;
     if (e.keyCode === 40) {
@@ -549,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.keyCode === 38) {
       gameStarted = true;
-      setPause('hidden');
+      setPause("hidden");
       moveBall(ballSpeed, e.keyCode);
     }
     if (e.keyCode === 37 && BOARD_CURRENT_INDEX != 193) {
@@ -572,31 +573,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function boostTheBall(speed) {
-    console.log('boost' + speed);
+    console.log("boost" + speed);
     speed /= 2;
-    console.log('boost' + speed);
+    console.log("boost" + speed);
   }
   function slowTheBall(speed) {
-    console.log('slow');
+    console.log("slow");
     speed *= 2;
   }
 
   renderBoard();
-  renderSquareStones(STONES_INDEX_ARRAY);
+  //renderSquareStones(STONES_INDEX_ARRAY);
   //renderTestStones(TEST_STONE);
-  //renderWallOfStones(WALL_INDEX_ARRAY);
+  renderWallOfStones(WALL_INDEX_ARRAY);
   function startGame(event) {
     console.log(event.keyCode);
     if (event.keyCode === 13) {
-      document.removeEventListener('keydown', startGame);
+      document.removeEventListener("keydown", startGame);
       //remove start screen
       //document.getElementById('start-screen').style.display = 'none';
       //set pacman velocity and enable movement
-      document.addEventListener('keydown', setBoardDirection);
+      document.addEventListener("keydown", setBoardDirection);
 
       //moveBoard();
       // move the Ghosts randomly
     }
   }
-  document.addEventListener('keydown', startGame);
+  document.addEventListener("keydown", startGame);
 });
